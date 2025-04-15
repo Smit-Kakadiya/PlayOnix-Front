@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.8
   #state management
   flutter_bloc: ^9.1.0
@@ -44,8 +46,6 @@ dependencies:
   #language translation
   slang: ^4.7.1
   slang_flutter: ^4.7.0
-  flutter_localization: ^0.3.2
-
 
 dev_dependencies:
   flutter_test:
