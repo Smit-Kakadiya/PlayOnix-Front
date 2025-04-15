@@ -45,6 +45,7 @@ pubspec.lock
 # Web related
 lib/generated_plugin_registrant.dart
 
+
 # Symbolication related
 app.*.symbols
 
@@ -93,3 +94,5 @@ Thumbs.db
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+lib/gen/assets.gen.dart
