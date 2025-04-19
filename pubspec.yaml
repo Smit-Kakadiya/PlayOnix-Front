@@ -46,6 +46,8 @@ dependencies:
   #language translation
   slang: ^4.7.1
   slang_flutter: ^4.7.0
+  #print logs
+  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:
