@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class RadiusConstant{
   static const double commonRadius = 16;
+  static const double commonFullRadius = 100;
   static const double alertdialogRadius = 24;
 }
 

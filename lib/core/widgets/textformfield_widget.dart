@@ -261,7 +261,7 @@ class TextFormFieldWidget extends StatelessWidget {
       maxLength: maxLength,
       textInputAction: textInputAction ?? TextInputAction.next,
       readOnly: isReadOnly ?? false,
-      style: textStyle ?? TextStyle(color: Color(0xFF6200EE), fontSize: 14 / scaleFactor, fontWeight: FontWeight.w600), // ColorConstants.primaryColor
+      style: textStyle ?? Theme.of(context).textTheme.bodyLarge,// ColorConstants.primaryColor
       keyboardType: textInputType ?? TextInputType.text,
       controller: controller,
       decoration: decoration ??
@@ -274,30 +274,27 @@ class TextFormFieldWidget extends StatelessWidget {
             errorText: errorText != null && (errorText?.isNotEmpty ?? false) ? errorText : null,
             suffixIcon: suffixIcon,
             hintStyle: hintStyle ??
-                TextStyle(
-                    color: themeColor?.captionTextColor,
-                    fontSize: 14 / scaleFactor,
-                    fontWeight: FontWeight.w600),
+             Theme.of(context).textTheme.bodyLarge?.copyWith(color: themeColor?.captionTextColor),
             hintText: hintText ?? '',
             border: border ?? InputBorder.none,
-            contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            fillColor: fillColor ?? themeColor?.textFieldColor.withOpacity(0.7),
+            contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 14, horizontal: 24),
+            fillColor: fillColor ?? themeColor?.containerColor,
             filled: true,
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.transparent),
-              borderRadius: BorderRadius.circular(RadiusConstant.commonRadius),
+              borderRadius: BorderRadius.circular(RadiusConstant.commonFullRadius),
             ),
             focusedBorder:OutlineInputBorder(
-              borderSide: BorderSide(color: themeColor?.primaryColor ?? Colors.transparent),
-              borderRadius: BorderRadius.circular(RadiusConstant.commonRadius),
+              borderSide: BorderSide(color: themeColor?.primaryColor ?? Colors.transparent,width: 2),
+              borderRadius: BorderRadius.circular(RadiusConstant.commonFullRadius),
             ),
             errorBorder:OutlineInputBorder(
               borderSide:  BorderSide(color: themeColor?.errorColor ?? Colors.transparent),
-              borderRadius: BorderRadius.circular(RadiusConstant.commonRadius),
+              borderRadius: BorderRadius.circular(RadiusConstant.commonFullRadius),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderSide:  BorderSide(color: themeColor?.errorColor ?? Colors.transparent),
-              borderRadius: BorderRadius.circular(RadiusConstant.commonRadius),
+              borderRadius: BorderRadius.circular(RadiusConstant.commonFullRadius),
             ),
             errorMaxLines: errorLines ?? 3,
 
@@ -309,9 +306,9 @@ class TextFormFieldWidget extends StatelessWidget {
       autofocus: autofocus ?? false,
       autocorrect: false,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      cursorColor: themeColor?.textColor, // Replace with ColorConstants.primaryColor
+      cursorColor: themeColor?.primaryColor, // Replace with ColorConstants.primaryColor
       cursorRadius: const Radius.circular(100),
-      cursorHeight: 24,
+      cursorHeight: 20,
       enabled: enable ?? true,
       expands: expands ?? false,
       keyboardAppearance: keyboardAppearance ?? Brightness.light,

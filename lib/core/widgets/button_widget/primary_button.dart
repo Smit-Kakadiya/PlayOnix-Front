@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:playonix/config/theme/theme_colors.dart';
+import 'package:playonix/core/constants/color_constants.dart';
+import 'package:playonix/core/constants/layout_constant.dart';
 import 'package:playonix/core/widgets/animations/scale_tap_animation.dart';
 import 'package:playonix/core/widgets/loader/three_bounce.dart';
 import 'package:playonix/core/widgets/text_widgets.dart';
@@ -74,21 +76,14 @@ class Button extends StatelessWidget {
         height: height ?? 48,
         width: width ?? double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              themeColor?.primaryColor ?? Colors.white,
-              themeColor?.secondaryColor ?? Colors.white
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-          borderRadius: BorderRadius.circular(borderRadius ?? 16),
-        ),
-        child: AppText.titleMedium(
-          text,
-          color: themeColor?.scaffoldColor,
+          color: themeColor?.primaryColor ?? Colors.white,
+          borderRadius: BorderRadius.circular(borderRadius ?? RadiusConstant.commonFullRadius),
         ),
         text: text,
+        child: AppText.titleMedium(
+          text,
+          color: ColorConstants.black,
+        ),
       );
     });
   }
@@ -114,21 +109,14 @@ class Button extends StatelessWidget {
         height: height ?? 32,
         width: width ?? 200,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              themeColor?.primaryColor ?? Colors.white,
-              themeColor?.secondaryColor ?? Colors.white
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-        ),
-        child: AppText.titleMedium(
-          text,
-          color: themeColor?.scaffoldColor,
+          color: themeColor?.primaryColor ?? Colors.white,
+          borderRadius: BorderRadius.circular(borderRadius ?? RadiusConstant.commonFullRadius),
         ),
         text: text,
+        child: AppText.titleMedium(
+          text,
+          color: ColorConstants.black,
+        ),
       );
     });
   }
@@ -155,11 +143,11 @@ class Button extends StatelessWidget {
         width: width ?? double.infinity,
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(borderRadius ?? 16),
-          border: Border.all(color: themeColor?.primaryColor ?? Colors.transparent),
+          borderRadius: BorderRadius.circular(borderRadius ?? RadiusConstant.commonFullRadius),
+          border: Border.all(color: themeColor?.primaryColor ?? Colors.transparent,width: 2),
         ),
-        child: AppText.titleMedium(text),
         text: text,
+        child: AppText.titleMedium(text),
       );
     });
   }
@@ -186,11 +174,11 @@ class Button extends StatelessWidget {
         width: width ?? 200,
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-          border: Border.all(color: themeColor?.primaryColor ?? Colors.transparent),
+          borderRadius: BorderRadius.circular(borderRadius ?? RadiusConstant.commonFullRadius),
+          border: Border.all(color: themeColor?.primaryColor ?? Colors.transparent,width: 2),
         ),
-        child: AppText.titleMedium(text),
         text: text,
+        child: AppText.titleMedium(text),
       );
     });
   }

@@ -30,9 +30,26 @@ class AppTheme {
     );
   }
 
+  static ThemeData lightTheme() {
+    return ThemeData(
+      brightness: Brightness.light,
+      scaffoldBackgroundColor: ColorConstants.gray100,
+      textTheme: TextTheme(
+          labelMedium: TextStyle(color: ColorConstants.gray500, fontWeight: FontWeight.w500, overflow: TextOverflow.ellipsis),
+          bodyMedium: TextStyle(color: ColorConstants.black, fontWeight: FontWeight.w400, overflow: TextOverflow.ellipsis),
+          bodyLarge:  TextStyle(color: ColorConstants.black, fontWeight: FontWeight.w500, overflow: TextOverflow.ellipsis),
+          titleMedium:  TextStyle(color: ColorConstants.black, fontWeight: FontWeight.w600, overflow: TextOverflow.ellipsis),
+          titleLarge:  TextStyle(color: ColorConstants.black, fontWeight: FontWeight.w600,fontSize: 20, overflow: TextOverflow.ellipsis),
+          headlineMedium:  TextStyle(color: ColorConstants.black, fontWeight: FontWeight.w600, overflow: TextOverflow.ellipsis)
+      ),
+      // Example change
+      extensions: const [ThemeColors.light],
+    );
+  }
+
   static ThemeData getTheme(AppThemeType type) {
     return switch (type) {
-      AppThemeType.light => darkTheme(),
+      AppThemeType.light => lightTheme(),
       AppThemeType.dark => darkTheme(),
     };
   }
