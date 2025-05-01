@@ -48,6 +48,8 @@ dependencies:
   slang_flutter: ^4.7.0
   #print logs
   logger: ^2.5.0
+  #routes
+  go_router: ^15.1.1
 
 dev_dependencies:
   flutter_test:

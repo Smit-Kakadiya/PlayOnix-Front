@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:playonix/routes/app_routes.dart';
 import 'config/theme/bloc/theme_bloc.dart';
 import 'gen/strings.g.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,9 +20,11 @@ class MyApp extends StatelessWidget {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, state) {
         return GestureDetector(
+           
           behavior: HitTestBehavior.translucent,
           onTap: () => FocusScope.of(context).unfocus(),
-          child: MaterialApp(
+          child: MaterialApp.router(
+            routerConfig: router,
             locale: TranslationProvider.of(context).flutterLocale,
             // use provider
             supportedLocales: AppLocaleUtils.supportedLocales,
@@ -29,7 +32,6 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: t.appName,
             theme: state.themeData,
-            home: HomePage(),
           ),
         );
       },
